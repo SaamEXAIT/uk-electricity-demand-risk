@@ -199,6 +199,23 @@ This dataset captures **gross system demand, residual demand, renewable generati
 - High correlation with full-period residuals ensures that **short-term interventions and hedging strategies are robust and scalable**.
 
 
+# Dashboard & Plots Preview
+
+| Plot | Preview | CSV |
+|------|---------|-----|
+| Dashboard LDC | ![Dashboard LDC](plots/dashboard_ramps_ldc.png){width=120} | [ldc_6mo.csv](outputs/ldc_6mo.csv) |
+| Panel 3 Ramps | ![Panel 3 Ramps](plots/panel3_ramps.png){width=120} | [ramp_stats_6m_gross_residual.csv](outputs/ramp_stats_6m_gross_residual.csv) |
+| Residual Ramp Box & Scatter | ![Residual Ramp Box & Scatter](plots/residual_ramp_box_scatter.png){width=120} | [residual_cluster_stats_6m_mc.csv](outputs/residual_cluster_stats_6m_mc.csv) |
+| Day-Ahead MC Plot | ![Day-Ahead MC Plot](plots/panel_mc_day_ahead.png){width=120} | [daily_extreme_mwh_6m_mc.csv](outputs/daily_extreme_mwh_6m_mc.csv) |
+| Week-Ahead MC Plot | ![Week-Ahead MC Plot](plots/panel_mc_bootstrap.png){width=120} | [bootstrap_mc_summary_1week_mc.csv](outputs/bootstrap_mc_summary_1week_mc.csv) |
+| Intraday Exceedance Heatmap | ![Intraday Exceedance Heatmap](plots/intraday_exceedance_heatmap.png){width=120} | [intraday_exceedance_heat_6m_mc.csv](outputs/intraday_exceedance_heat_6m_mc.csv) |
+| Cumulative Extreme Ramps | ![Cumulative Extreme Ramps](plots/portfolio_extreme_ramps_cumulative.png){width=120} | [portfolio_extreme_ramps_cumulative.csv](outputs/portfolio_extreme_ramps_cumulative.csv) |
+| Residual LDC & Hedge Stress | ![Residual LDC & Hedge Stress](plots/residual_ldc_6mo.png){width=120} | [ldc_residual_6mo.csv](outputs/ldc_residual_6mo.csv) |
+| Uncovered MWh Boxplot | ![Uncovered MWh Boxplot](plots/uncovered_mwh_boxplot.png){width=120} | [uncovered_mwh_hedge_test.csv](outputs/uncovered_mwh_hedge_test.csv) |
+| Recent 6-Month Ramps | ![Recent 6-Month Ramps](plots/Panel3_Combined_Recent_6M.png){width=120} | [recent_ramps_6mo.csv](outputs/recent_ramps_6mo.csv) |
+
+
+
 
 ### Notes
 

@@ -1,0 +1,46 @@
+```mermaid
+%% FlowChart
+%% Author: Oleksandr Skytchenko
+%% Date: 2025-10-04
+
+flowchart TD
+    %% RAW DATA
+    RAW["Raw Data: historic_demand_2009_2024.csv"]
+
+    %% PIPELINE MODULES
+    A["Part 1: Data Cleaning & Feature Engineering"]
+    B["Part 2: Ramp Metrics & Risk Engine"]
+    C["Part 3: Monte Carlo Simulation"]
+    D["Part 4: Dashboard & Plots"]
+
+    %% FLOW
+    RAW --> A --> B --> C --> D
+
+    %% PART 1 FEATURES
+    A1["Hourly & Daily Totals"] --> A
+    A2["LDC Curves: Gross & Residual"] --> A
+    A3["Intraday Profiles"] --> A
+
+    %% PART 2 RAMP METRICS
+    B1["Gross vs Residual Ramps"] --> B
+    B2["Extreme Ramp Percentiles 90-95-99"] --> B
+    B3["Residual Cluster Analysis"] --> B
+
+    %% PART 3 MONTE CARLO
+    C1["Day-Ahead Block Bootstrap"] --> C
+    C2["Week-Ahead Block Bootstrap"] --> C
+    C3["VaR95 Residual Exposure"] --> C
+
+    %% PART 4 PLOTS WITH THUMBNAILS + CSV LINKS
+    D1["[Dashboard LDC](plots/dashboard_ramps_ldc.png)<br>[CSV](outputs/ldc_6mo.csv)<br><img src='plots/dashboard_ramps_ldc.png' width='120'>"] --> D
+    D2["[Panel 3 Ramps](plots/panel3_ramps.png)<br>[CSV](outputs/ramp_stats_6m_gross_residual.csv)<br><img src='plots/panel3_ramps.png' width='120'>"] --> D
+    D3["[Residual Ramp Box & Scatter](plots/residual_ramp_box_scatter.png)<br>[CSV](outputs/residual_cluster_stats_6m_mc.csv)<br><img src='plots/residual_ramp_box_scatter.png' width='120'>"] --> D
+    D4["[Day-Ahead MC Plot](plots/panel_mc_day_ahead.png)<br>[CSV](outputs/daily_extreme_mwh_6m_mc.csv)<br><img src='plots/panel_mc_day_ahead.png' width='120'>"] --> D
+    D5["[Week-Ahead MC Plot](plots/panel_mc_bootstrap.png)<br>[CSV](outputs/bootstrap_mc_summary_1week_mc.csv)<br><img src='plots/panel_mc_bootstrap.png' width='120'>"] --> D
+    D6["[Intraday Exceedance Heatmap](plots/intraday_exceedance_heatmap.png)<br>[CSV](outputs/intraday_exceedance_heat_6m_mc.csv)<br><img src='plots/intraday_exceedance_heatmap.png' width='120'>"] --> D
+    D7["[Cumulative Extreme Ramps](plots/portfolio_extreme_ramps_cumulative.png)<br>[CSV](outputs/portfolio_extreme_ramps_cumulative.csv)<br><img src='plots/portfolio_extreme_ramps_cumulative.png' width='120'>"] --> D
+    D8["[Residual LDC & Hedge Stress](plots/residual_ldc_6mo.png)<br>[CSV](outputs/ldc_residual_6mo.csv)<br><img src='plots/residual_ldc_6mo.png' width='120'>"] --> D
+    D9["[Uncovered MWh Boxplot](plots/uncovered_mwh_boxplot.png)<br>[CSV](outputs/uncovered_mwh_hedge_test.csv)<br><img src='plots/uncovered_mwh_boxplot.png' width='120'>"] --> D
+    D10["[Recent 6-Month Ramps](plots/Panel3_Combined_Recent_6M.png)<br>[CSV](outputs/recent_ramps_6mo.csv)<br><img src='plots/Panel3_Combined_Recent_6M.png' width='120'>"] --> D
+
+```
