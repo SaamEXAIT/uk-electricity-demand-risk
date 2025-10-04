@@ -1,0 +1,13 @@
+{
+  "plots": ["dashboard_ramps_ldc.png", "intraday_exceedance_heatmap.png", "panel_mc_bootstrap.png", "panel_mc_day_ahead.png", "Panel3_Combined_Recent_6M.png", "panel3_ramps.png", "portfolio_extreme_ramps_cumulative.png", "residual_ldc_6mo.png", "residual_ramp_box_scatter.png", "uncovered_mwh_boxplot.png"],
+  "outputs": ["bootstrap_mc_summary_1week_mc.csv", "daily_extreme_mwh_6m_mc.csv", "intraday_exceedance_heat_6m_mc.csv", "ldc_residual_6mo.csv", "ramp_stats_6m_gross_residual.csv", "recent_ramps_6mo.csv", "residual_cluster_stats_6m_mc.csv", "uncovered_mwh_hedge_test.csv"],
+  "scripts": [],
+  "data": "historic_demand_2009_2024.csv",
+  "repo_info": {
+    "name": "Energy Portfolio Coordinator",
+    "description": "Curated GitHub repository for energy portfolio risk and ramp analysis using R.",
+    "created": "2025-10-04 09:25:59",
+    "author": "Oleksandr Skytchenko",
+    "includes_metadata": false
+  }
+}

@@ -1,0 +1,19 @@
+# === R and RStudio ===
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+
+# === OS & temp files ===
+.DS_Store
+Thumbs.db
+
+# === Logs and cache ===
+*.log
+*/.ipynb_checkpoints/
+
+# === Metadata / local configs ===
+outputs/metadata_run.json
+
+# === Optional large or private data ===
+data/historic_demand_2009_2024.csv
