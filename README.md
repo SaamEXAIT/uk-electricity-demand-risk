@@ -25,31 +25,31 @@ The system enables traders, stakeholders, and regulators to **visualize and miti
 ```mermaid
 flowchart TD
     %% RAW DATA
-    RAW[Raw Data: historic_demand_2009_2024.csv]
+    RAW["Raw Data: historic_demand_2009_2024.csv"]
 
     %% PIPELINE MODULES
-    A[Part 1: Data Cleaning & Feature Engineering]
-    B[Part 2: Ramp Metrics & Risk Engine]
-    C[Part 3: Monte Carlo Simulation]
-    D[Part 4: Dashboard & Plots]
+    A["Part 1: Data Cleaning & Feature Engineering"]
+    B["Part 2: Ramp Metrics & Risk Engine"]
+    C["Part 3: Monte Carlo Simulation"]
+    D["Part 4: Dashboard & Plots"]
 
     %% FLOW
     RAW --> A --> B --> C --> D
 
     %% PART 1 FEATURES
-    A1[Hourly & Daily Totals] --> A
-    A2[LDC Curves: Gross & Residual] --> A
-    A3[Intraday Profiles] --> A
+    A1["Hourly & Daily Totals"] --> A
+    A2["LDC Curves: Gross & Residual"] --> A
+    A3["Intraday Profiles"] --> A
 
     %% PART 2 RAMP METRICS
-    B1[Gross vs Residual Ramps] --> B
-    B2[Extreme Ramp Percentiles (90/95/99)] --> B
-    B3[Residual Cluster Analysis] --> B
+    B1["Gross vs Residual Ramps"] --> B
+    B2["Extreme Ramp Percentiles 90-95-99"] --> B
+    B3["Residual Cluster Analysis"] --> B
 
     %% PART 3 MONTE CARLO
-    C1[Day-Ahead Block Bootstrap] --> C
-    C2[Week-Ahead Block Bootstrap] --> C
-    C3[VaR95 Residual Exposure] --> C
+    C1["Day-Ahead Block Bootstrap"] --> C
+    C2["Week-Ahead Block Bootstrap"] --> C
+    C3["VaR95 Residual Exposure"] --> C
 
     %% PART 4 PLOTS WITH THUMBNAILS + CSV LINKS
     D1["[Dashboard LDC](plots/dashboard_ramps_ldc.png)<br>[CSV](outputs/ldc_6mo.csv)<br><img src='plots/dashboard_ramps_ldc.png' width='120'>"] --> D
@@ -135,7 +135,7 @@ This dataset captures **gross system demand, residual demand, renewable generati
 |VaR95 uncovered MWh |         NA          |      32515.575      | VaR95 — residual energy exposure after hedging |
 
 <!-- STATS_TABLE2_END -->
-*Table 2: Comparative Descriptive Statistics of Gross and Residual Ramps (Full Period)*
+*Table 1: Descriptive Statistics of Gross and Residual Ramps (Full Period)*
 **Key Insights:**  
 - **Residual ramps expose the counterfactual variability**, showing what system swings would be if predictable demand effects were absent.  
 - **Fat tails remain** even after hedging; the 95th and 99th percentiles highlight rare but extreme events.  
@@ -165,38 +165,38 @@ This dataset captures **gross system demand, residual demand, renewable generati
 
 <!-- COMPARATIVE_TABLE_END -->
 
-#Key Insights:
-##Tail risk captured in short-term residuals
+*Table 2: Comparative Descriptive Statistics of Gross and Residual Ramps (6M vs Gross)*
+
+# **Key Insights:** 
+## Tail risk captured in short-term residuals
 - The 6-month residual ramps (q95: 2083.5 MW; q99: 3189.75 MW) are already are already close to full-period extremes (q95: 2114 MW; q99: 3332 MW). 
 - Even a short observational window captures extreme events, allowing **rapid scenario simulations and short-term hedging decisions**.
 
-##Residual volatility dominates gross demand
+## Residual volatility dominates gross demand
 - The standard deviation of 6M residual ramps (1141 MW) is significantly higher than the gross (768 MW).
 - Full-period residual SD (1186.83 MW) confirms residual volatility remains dominant over gross (1028.2 MW).  
 - By stripping out predictable demand, the underlying variability is exposed — akin to measuring the “pure alpha” of a system. 
 - This isolates the counterfactual effect of the residual computation, highlighting risk not visible in aggregate demand.
 
-##Stable mean, variance-driven risk
+## Stable mean, variance-driven risk
 - T-tests show that residual means for 6M and full datasets are essentially zero (p > 0.95), confirming **no systemic drift**. 
 - Risk is in the fluctuations, not bias  — focus should be on **volatility clusters**, not directional bets.
 - Interpretation: the “treatment” changes dispersion, not level.
 
-##Covariance confirms representativeness of 6M
+## Covariance confirms representativeness of 6M
 - Covariance (6M residual vs full residual: 1,303,571 MW²) and correlation (≈1) show that short-term data mirrors long-term dynamics. 
 - High-fidelity short-term observations are sufficient for robust inference and hedging decisions.
 
-##Potential exposure and hedging opportunities
+## Potential exposure and hedging opportunities
 - 6M VaR95 uncovered MWh: 648,121 MWh (~3% of full-period exposure 20,540,238 MWh). This highlights actionable insights for **hedging sizing, storage allocation, and operational contingency planning**.
 
-##Asymmetry in residuals
+## Asymmetry in residuals
 - Median residual ramps (-147 MW) are more negative than gross (-90 MW), suggesting  **frequent downward corrections**. 
 - Tail behavior highlights **asymmetric risk**, advising traders and policymakers to focus on mitigating downward excursions.
 
-##Operational & policy takeaway
+## Operational & policy takeaway
 - From our perspective, these residuals quantify the **counterfactual: what would happen if predictable demand were neutralized**.  
 - High correlation with full-period residuals ensures that **short-term interventions and hedging strategies are robust and scalable**.
-
-
 
 
 
@@ -205,10 +205,10 @@ This dataset captures **gross system demand, residual demand, renewable generati
 - All plots are generated in `plots/` and CSV outputs are saved in `outputs`.
 - Metadata for each run is captured (R version, session info, RNG seed, timestamp) and can be saved to `outputs/metadata_run.json` for reproducibility and auditing.
 
-### Setup / Configuration (R)
+# Setup / Configuration (R)
 
 
-# Setup / configuration
+## Setup / configuration
 library(tidyverse)
 library(lubridate)
 library(tsibble)
@@ -245,7 +245,7 @@ save_run_metadata()
 
 
 
-## Enterprise & Future Opportunities
+# Enterprise & Future Opportunities
 
 - **Database-ready:** Fully compatible with PostgreSQL or other relational databases for historical and real-time storage.
 - **Automated workflows:** Supports daily/weekly risk reporting and trading desk dashboards.
