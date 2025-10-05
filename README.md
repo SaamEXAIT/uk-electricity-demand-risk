@@ -166,10 +166,11 @@ This dataset captures **gross system demand, residual demand, renewable generati
 <!-- COMPARATIVE_TABLE_END -->
 
 *Table 2: Comparative Descriptive Statistics of Gross and Residual Ramps (6M vs Gross)*
+- MW (instantaneous half-hour ramp magnitude). VaR uncovered is in MWh, converted half-hour segments to energy (MW * 0.5h = MWh)
 
 # **Key Insights:** 
 ## Tail risk captured in short-term residuals
-- The 6-month residual ramps (q95: 2083.5 MW; q99: 3189.75 MW) are already are already close to full-period extremes (q95: 2114 MW; q99: 3332 MW). 
+- The 6-month residual ramps (q95: 2083.5 MW; q99: 3189.75 MW) are already close to full-period extremes (q95: 2114 MW; q99: 3332 MW). 
 - Even a short observational window captures extreme events, allowing **rapid scenario simulations and short-term hedging decisions**.
 
 ## Residual volatility dominates gross demand
@@ -203,9 +204,9 @@ This dataset captures **gross system demand, residual demand, renewable generati
 
 | Plot | Preview | CSV |
 |------|---------|-----|
-| Dashboard LDC | ![Dashboard LDC](plots/dashboard_ramps_ldc.png){width=120} | [ldc_6mo.csv](outputs/ldc_6mo.csv) |
-| Panel 3 Ramps | ![Panel 3 Ramps](plots/panel3_ramps.png){width=120} | [ramp_stats_6m_gross_residual.csv](outputs/ramp_stats_6m_gross_residual.csv) |
-| Residual Ramp Box & Scatter | ![Residual Ramp Box & Scatter](plots/residual_ramp_box_scatter.png){width=120} | [residual_cluster_stats_6m_mc.csv](outputs/residual_cluster_stats_6m_mc.csv) |
+| Dashboard LDC | ![Dashboard LDC](plots/dashboard_ramps_ldc.png){width=120} | [ldc_6mo.csv](outputs/ldc_residual_6mo.csv) |
+| Panel 3 Ramps | ![Panel 3 Ramps](plots/panel3_ramps.png){width=120} | [ramp_stats_historic_gross_residual.csv](outputs/ramp_stats_historic_gross_residual.csv) |
+| Residual Ramp Box & Scatter | ![Residual Ramp Box & Scatter](plots/residual_ramp_box_scatter.png){width=120} | [ramp_stats_6m_gross_residual.csv](outputs/ramp_stats_6m_gross_residual.csv) |  [ramp_distribution_metrics_windows_mc.csv](ramp_distribution_metrics_windows_mc.csv)|
 | Day-Ahead MC Plot | ![Day-Ahead MC Plot](plots/panel_mc_day_ahead.png){width=120} | [daily_extreme_mwh_6m_mc.csv](outputs/daily_extreme_mwh_6m_mc.csv) |
 | Week-Ahead MC Plot | ![Week-Ahead MC Plot](plots/panel_mc_bootstrap.png){width=120} | [bootstrap_mc_summary_1week_mc.csv](outputs/bootstrap_mc_summary_1week_mc.csv) |
 | Intraday Exceedance Heatmap | ![Intraday Exceedance Heatmap](plots/intraday_exceedance_heatmap.png){width=120} | [intraday_exceedance_heat_6m_mc.csv](outputs/intraday_exceedance_heat_6m_mc.csv) |
