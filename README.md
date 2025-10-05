@@ -204,9 +204,9 @@ This dataset captures **gross system demand, residual demand, renewable generati
 
 | Plot | Preview | CSV |
 |------|---------|-----|
-| Dashboard LDC | ![Dashboard LDC](plots/dashboard_ramps_ldc.png){width=120} | [ldc_6mo.csv](outputs/ldc_residual_6mo.csv) |
+| Dashboard LDC | ![Dashboard LDC](plots/dashboard_ramps_ldc.png){width=120} | [ldc_residual_6mo.csv](outputs/ldc_residual_6mo.csv) |
 | Panel 3 Ramps | ![Panel 3 Ramps](plots/panel3_ramps.png){width=120} | [ramp_stats_historic_gross_residual.csv](outputs/ramp_stats_historic_gross_residual.csv) |
-| Residual Ramp Box & Scatter | ![Residual Ramp Box & Scatter](plots/residual_ramp_box_scatter.png){width=120} | [ramp_stats_6m_gross_residual.csv](outputs/ramp_stats_6m_gross_residual.csv) |  [ramp_distribution_metrics_windows_mc.csv](ramp_distribution_metrics_windows_mc.csv)|
+| Residual Ramp Box & Scatter | ![Residual Ramp Box & Scatter](plots/residual_ramp_box_scatter.png){width=120} | [ramp_stats_6m_gross_residual.csv](outputs/ramp_stats_6m_gross_residual.csv) |  [ramp_distribution_metrics_windows_mc.csv](outputs/ramp_distribution_metrics_windows_mc.csv)|
 | Day-Ahead MC Plot | ![Day-Ahead MC Plot](plots/panel_mc_day_ahead.png){width=120} | [daily_extreme_mwh_6m_mc.csv](outputs/daily_extreme_mwh_6m_mc.csv) |
 | Week-Ahead MC Plot | ![Week-Ahead MC Plot](plots/panel_mc_bootstrap.png){width=120} | [bootstrap_mc_summary_1week_mc.csv](outputs/bootstrap_mc_summary_1week_mc.csv) |
 | Intraday Exceedance Heatmap | ![Intraday Exceedance Heatmap](plots/intraday_exceedance_heatmap.png){width=120} | [intraday_exceedance_heat_6m_mc.csv](outputs/intraday_exceedance_heat_6m_mc.csv) |
@@ -217,16 +217,12 @@ This dataset captures **gross system demand, residual demand, renewable generati
 
 
 
-
 ### Notes
 
 - All plots are generated in `plots/` and CSV outputs are saved in `outputs`.
 - Metadata for each run is captured (R version, session info, RNG seed, timestamp) and can be saved to `outputs/metadata_run.json` for reproducibility and auditing.
 
 # Setup / Configuration (R)
-
-
-## Setup / configuration
 library(tidyverse)
 library(lubridate)
 library(tsibble)
