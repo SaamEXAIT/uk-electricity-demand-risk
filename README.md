@@ -1,4 +1,4 @@
-# Energy Portfolio Management  
+# Energy Portfolio Management Pipeline – Electricity Demand & Ramp Risk Analytics 
 _A reproducible pipeline for electricity demand ramps, risk metrics, Monte Carlo hedging, and ESG dashboards – England & Wales Electricity Market_
 
 **Author:** Oleksandr Skytchenko  
